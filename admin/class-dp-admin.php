@@ -274,6 +274,12 @@ class Dog_Pages_Admin {
           <?php if (is_multisite()): ?>
               <p><strong>Multisite Enabled:</strong> This setting is saved per site (Site ID: <?php echo get_current_blog_id(); ?>).</p>
           <?php endif; ?>
+          <?php if (!get_page_by_path('dog')) {
+              echo '<div class="notice notice-warning is-dismissible">';
+              echo '<p><strong>Dog Page Missing:</strong> The /dog page does not exist yet. <a href="' . esc_url(admin_url('admin.php?page=dogpages-settings&create_dog_page=1')) . '">Click here to create it</a>.</p>';
+              echo '</div>';
+            }
+          ?>
           <form method="post" action="options.php">
               <?php
               settings_fields('dogpages_options');
