@@ -1,0 +1,15 @@
+.blue {
+  color: #0d5dde;
+}
+
+.dogpages-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: auto;
+}
+
+.dogpages-image-container img {
+  max-width: 100%;
+  height: auto;
+}
